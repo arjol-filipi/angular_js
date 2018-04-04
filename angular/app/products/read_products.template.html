@@ -1,0 +1,31 @@
+<div layout="row" ng-controller="productsController" ng-cloak>
+    <div flex="10"></div>
+    <div flex="80" class="m-20px-0">
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbaar-tools">
+                <div flex md-truncate>
+                    <h3 class="md-headline">Products</h3>
+                </div>
+                <md-button class="md-raised" ng-click="showCreateProductForm()">Create</md-button>
+            </div>
+        </md-toolbar>
+        <md-contest flex>
+            <md-list ng-init="readProducts()">
+                <md-list-items class="md-3-line" ng-repeat="product in products">
+                    <div class="md-list-item-text">
+                        <h3>{{product.name}}</h3>
+                        <h4>{{product.description}}</h4>
+                        <p>${{product.price}}</p>
+                    </div>
+                    <div class="md-secondary-container">
+                        <!-- 'read one' button will be here -->
+                        <!-- 'edit' button will be here -->
+                        <!-- 'delete' button will be here -->
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-items>
+            </md-list>
+        </md-contest>
+    </div>
+    <div flex="10"></div>
+</div>
